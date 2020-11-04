@@ -506,9 +506,9 @@
     #define DEFAULT_Ki_LIST {   1.14,   1.14 }
     #define DEFAULT_Kd_LIST {  46.57,  46.57 }
   #else
-    #define DEFAULT_Kp  23.98
-    #define DEFAULT_Ki   1.48
-    #define DEFAULT_Kd  94.65
+    #define DEFAULT_Kp  26.71
+    #define DEFAULT_Ki   1.87
+    #define DEFAULT_Kd  95.18
   #endif
 #endif // PIDTEMP
 
@@ -546,9 +546,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // Sidewinder X1
-  #define DEFAULT_bedKp 54.66
-  #define DEFAULT_bedKi 9.85
-  #define DEFAULT_bedKd 202.25
+  #define DEFAULT_bedKp 52.41
+  #define DEFAULT_bedKi 9.33
+  #define DEFAULT_bedKd 196.21
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -992,7 +992,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 35, -1.87 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 35, -1.83 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1240,15 +1240,15 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
-#define MESH_BED_LEVELING
+//#define MESH_BED_LEVELING
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1287,7 +1287,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 4
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
